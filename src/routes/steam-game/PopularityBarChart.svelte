@@ -40,16 +40,16 @@
             .data(topAverage)
             .enter()
             .append('div')
-            .style('background-color', function (d, i) {
+            .style('background-color', (d, i) => {
                 const percentage = (d.avg / topSum) * 100;
                 return percentage > 10 ? color(i) : 'SlateGray';
             })
-            .style('width', function (d) {
+            .style('width', (d) => {
                 const viewpointWidth =
                     (d.avg / d3.max(topAverage, (data) => data.avg)) * 100;
                 return `${viewpointWidth}%`;
             })
-            .text(function (d) {
+            .text((d) => {
                 return d.gamename;
             })
             .on('click', onClickChartArea)

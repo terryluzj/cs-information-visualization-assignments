@@ -32,6 +32,8 @@
     "dependencies": {
         "compression": "^1.7.1",
         "d3": "^6.6.0",
+        "d3-collection": "^1.0.7",
+        "mapbox-gl": "^2.1.1",
         "node-fetch": "^2.6.1",
         "polka": "next",
         "sirv": "^1.0.0"

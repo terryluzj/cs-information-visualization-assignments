@@ -38,19 +38,19 @@
             .enter()
             .append('path')
             .attr('d', arc)
-            .attr('fill', function (d, i) {
+            .attr('fill', (d, i) => {
                 const percentage = (d.data.avg / topSum) * 100;
                 return percentage > 10 ? color(i) : 'SlateGray';
             })
             .attr('stroke', '#f2f2f2')
             .style('stroke-width', '1px')
-            .on('click', function (d, i) {
+            .on('click', (d, i) => {
                 onClickChartArea(d, { ...i.data, index: i.index });
             })
-            .on('mouseover', function (d, i) {
+            .on('mouseover', (d, i) => {
                 onMouseOver(d, { ...i.data, index: i.index });
             })
-            .on('mouseout', function (d, i) {
+            .on('mouseout', (d, i) => {
                 onMouseOut(d, { ...i.data, index: i.index });
             });
 
@@ -60,13 +60,13 @@
             .data(topAveragePie)
             .enter()
             .append('text')
-            .text(function (d) {
+            .text((d) => {
                 const percentage = (d.data.avg / topSum) * 100;
                 return percentage > 10
                     ? `${Math.round(percentage)}%`
                     : undefined;
             })
-            .attr('transform', function (d) {
+            .attr('transform', (d) => {
                 return 'translate(' + arc.centroid(d) + ')';
             })
             .attr('font-size', '14')

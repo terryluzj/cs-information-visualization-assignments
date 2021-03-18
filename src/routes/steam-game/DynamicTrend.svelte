@@ -122,7 +122,7 @@
                 .attr('y', 0)
                 .attr('width', labelSize * 1.2)
                 .attr('height', labelSize)
-                .style('fill', function (d) {
+                .style('fill', (d) => {
                     return color(d);
                 });
 
@@ -139,12 +139,10 @@
                         labelSize * 1.5
                 )
                 .attr('y', labelSize * 0.5)
-                .style('fill', function (d) {
+                .style('fill', (d) => {
                     return color(d);
                 })
-                .text(function (d) {
-                    return d;
-                })
+                .text((d) => d)
                 .attr('text-anchor', 'right')
                 .style('alignment-baseline', 'middle');
         }

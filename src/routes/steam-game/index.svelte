@@ -16,7 +16,7 @@
 
     export let rawData;
 
-    const onMouseOverHandler = function (_event, data) {
+    const onMouseOverHandler = (_event, data) => {
         if (!focusedData) {
             selectedData = data;
         }
