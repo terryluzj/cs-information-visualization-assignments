@@ -1,7 +1,7 @@
 <script>
     import * as d3 from 'd3';
     import { onMount, afterUpdate } from 'svelte';
-    import { rawData, loadRawData, getTopGameAverage } from './data-operation';
+    import { getTopGameAverage } from './operation';
 
     let pieChartEl;
     let pieChartWidth;
@@ -13,9 +13,9 @@
 
     export let focusedData;
     export let selectedData;
+    export let rawData;
 
     onMount(async () => {
-        await loadRawData();
         const topAverage = getTopGameAverage(rawData);
         const topSum = d3.sum(topAverage, (data) => data.avg);
 

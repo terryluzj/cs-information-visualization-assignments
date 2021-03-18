@@ -1,7 +1,7 @@
 <script>
     import * as d3 from 'd3';
-    import { afterUpdate, onMount } from 'svelte';
-    import { rawData, loadRawData, getGameGroup } from './data-operation';
+    import { afterUpdate } from 'svelte';
+    import { getGameGroup } from './operation';
 
     let timeSeriesEl;
     let timeSeriesWidth;
@@ -10,10 +10,7 @@
     const [marginHorizontal, marginVertical] = [5, 8];
 
     export let data;
-
-    onMount(async () => {
-        await loadRawData();
-    });
+    export let rawData;
 
     afterUpdate(() => {
         if (rawData && data) {

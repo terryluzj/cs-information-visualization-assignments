@@ -1,11 +1,20 @@
+<script context="module">
+    import { loadCSV } from '../../utils';
+    export async function preload() {
+        const rawData = await loadCSV.call(this, 'steam-game.csv');
+        return { rawData };
+    }
+</script>
+
 <script>
-    import * as d3 from 'd3';
     import DynamicTrend from './DynamicTrend.svelte';
     import PopularityBarChart from './PopularityBarChart.svelte';
     import PopularitySharePieChart from './PopularitySharePieChart.svelte';
 
-    export let selectedData;
-    export let focusedData;
+    let selectedData;
+    let focusedData;
+
+    export let rawData;
 
     const onMouseOverHandler = function (_event, data) {
         if (!focusedData) {
@@ -43,6 +52,7 @@
             {onClickChartArea}
             {selectedData}
             {focusedData}
+            {rawData}
         />
         <PopularitySharePieChart
             onMouseOver={onMouseOverHandler}
@@ -50,10 +60,11 @@
             {onClickChartArea}
             {selectedData}
             {focusedData}
+            {rawData}
         />
     </div>
     <div class="dynamic-chart">
-        <DynamicTrend data={focusedData || selectedData} />
+        <DynamicTrend data={focusedData || selectedData} {rawData} />
     </div>
 </div>
 
@@ -100,7 +111,7 @@
         line-height: 1;
     }
 
-    :global(h1) > * {
+    :global(h1) * {
         vertical-align: middle;
     }
 

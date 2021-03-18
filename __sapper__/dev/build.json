@@ -1,0 +1,48 @@
+{
+  "bundler": "rollup",
+  "shimport": "2.0.4",
+  "assets": {
+    "main": "client.a39b1d8a.js"
+  },
+  "css": {
+    "main": [
+      "client-27eac524.css"
+    ]
+  },
+  "dependencies": {
+    "index.svelte": [
+      "index.e139cc72.js",
+      "inject_styles.5607aec6.js"
+    ],
+    "steam-game/index.svelte": [
+      "index.e5b34522.js",
+      "operation.6e105956.js",
+      "DynamicTrend.dbe43464.js",
+      "PopularityBarChart.dea39bd0.js",
+      "PopularitySharePieChart.d6b2f2bd.js",
+      "inject_styles.5607aec6.js",
+      "DynamicTrend-d3794f86.css",
+      "PopularityBarChart-ff388202.css",
+      "PopularitySharePieChart-5993a788.css",
+      "index-0ff9d5ee.css"
+    ],
+    "steam-game/PopularitySharePieChart.svelte": [
+      "PopularitySharePieChart.d6b2f2bd.js",
+      "operation.6e105956.js",
+      "inject_styles.5607aec6.js",
+      "PopularitySharePieChart-5993a788.css"
+    ],
+    "steam-game/PopularityBarChart.svelte": [
+      "PopularityBarChart.dea39bd0.js",
+      "operation.6e105956.js",
+      "inject_styles.5607aec6.js",
+      "PopularityBarChart-ff388202.css"
+    ],
+    "steam-game/DynamicTrend.svelte": [
+      "DynamicTrend.dbe43464.js",
+      "operation.6e105956.js",
+      "inject_styles.5607aec6.js",
+      "DynamicTrend-d3794f86.css"
+    ]
+  }
+}

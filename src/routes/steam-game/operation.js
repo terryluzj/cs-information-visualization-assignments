@@ -1,21 +1,5 @@
 import * as d3 from 'd3';
 
-let rawData;
-
-const loadRawData = () =>
-    new Promise((resolve) => {
-        if (!rawData) {
-            d3.csv('data/steam-game-trends.csv').then((data) => {
-                rawData = data;
-                resolve();
-            });
-        } else {
-            resolve();
-        }
-    });
-
-loadRawData();
-
 const getGameGroup = (rawData) => d3.group(rawData, (data) => data.gamename);
 
 const getTopGameAverage = (rawData, top = 10) => {
@@ -33,4 +17,4 @@ const getTopGameAverage = (rawData, top = 10) => {
     return topAverage;
 };
 
-export { rawData, loadRawData, getGameGroup, getTopGameAverage };
+export { getGameGroup, getTopGameAverage };
