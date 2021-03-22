@@ -35,7 +35,7 @@
         "d3-collection": "^1.0.7",
         "mapbox-gl": "^2.1.1",
         "node-fetch": "^2.6.1",
-        "polka": "next",
+        "polka": "^0.5.2",
         "sirv": "^1.0.0"
     },
     "repository": {
